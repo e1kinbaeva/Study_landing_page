@@ -6,4 +6,3 @@ from apps.contact.models import Telegram
 class TelegramAdmin(admin.ModelAdmin):
     list_display = ['id', 'fullname', 'phone']
     
-# admin.site.register(Telegram)  

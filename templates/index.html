@@ -97,7 +97,7 @@
                       <div class="col-md-12">
                         <h2>{{settings.title}}</h2>
                         <p>{{settings.description}}</p>
-                        <a class="slide-btn smoth-scroll" href="#contactus">Связаться</a>
+                        <a class="slide-btn smoth-scroll" href="#aboutus">Связаться</a>
                       </div>
                     </div>
                   </div>
@@ -116,7 +116,7 @@
                       <div class="col-md-12">
                         <h2>{{settings.title}}</h2>
                         <p>{{settings.description}}</p>
-                        <a class="slide-btn smoth-scroll" href="#contactus">Связаться</a>
+                        <a class="slide-btn smoth-scroll" href="#aboutus">Связаться</a>
                       </div>
                     </div>
                   </div>
@@ -135,7 +135,7 @@
                       <div class="col-md-12">
                         <h2>{{settings.title}}</h2>
                         <p>{{settings.description}}</p>
-                        <a class="slide-btn smoth-scroll" href="#contactus">Связаться</a>
+                        <a class="slide-btn smoth-scroll" href="#aboutus">Связаться</a>
                       </div>
                     </div>
                   </div>
@@ -257,29 +257,29 @@
         <div class="col-sm-3">
           <div class="counter">
             <div class="counter-icon-box"><i class="lnr lnr-clock"></i></div>
-            <div class="number animateNumber" data-num="5325"> <span>5325</span></div>
-            <p>Hours of Lessions</p>
+            <div class="number animateNumber" data-num="{{info.lesson_count}}"> <span>{{info.lesson_count}}</span></div>
+            <p>Часов проведенных занятий</p>
           </div>
         </div>
         <div class="col-sm-3">
           <div class="counter">
             <div class="counter-icon-box"><i class="lnr lnr-users"></i></div>
-            <div class="number animateNumber" data-num="160"> <span>160</span></div>
-            <p>Satisfied Students</p>
+            <div class="number animateNumber" data-num="{{info.student_count}}"> <span>{{info.student_count}}</span></div>
+            <p>Довольные студенты</p>
           </div>
         </div>
         <div class="col-sm-3">
           <div class="counter">
             <div class="counter-icon-box"><i class="lnr lnr-laptop"></i></div>
-            <div class="number animateNumber" data-num="530"> <span>530</span></div>
-            <p>Courses</p>
+            <div class="number animateNumber" data-num="{{info.course}}"> <span>{{info.course}}</span></div>
+            <p>Количество наших курсов</p>
           </div>
         </div>
         <div class="col-sm-3">
           <div class="counter">
             <div class="counter-icon-box"><i class="lnr lnr-thumbs-up"></i></div>
-            <div class="number animateNumber" data-num="49"> <span>49</span></div>
-            <p>Awards Won</p>
+            <div class="number animateNumber" data-num="{{info.awards}}"> <span>{{info.awards}}</span></div>
+            <p>Выигранные награды</p>
           </div>
         </div>
       </div>
@@ -383,46 +383,48 @@
         <div class="col-md-8 col-md-offset-2 col-sm-12">
           <div class="contact-info">
             <div class="col-md-4 col-sm-4">
+
               <div class="single-contact"> <i class="lnr lnr-smartphone"></i>
-                <h4>Phone</h4>
-                <p>000-111-333333</p>
+                <h4>Номер телефона</h4>
+                <p>{{contact.phone}}</p>
               </div>
             </div>
             <div class="col-md-4 col-sm-4">
               <div class="single-contact"> <i class="lnr lnr-map-marker"></i>
-                <h4>Address</h4>
-                <p>255, Williams Lane USA</p>
+                <h4>Адрес</h4>
+                <p>{{contact.address}}</p>
               </div>
             </div>
             <div class="col-md-4 col-sm-4">
               <div class="single-contact"> <i class="lnr lnr-thumbs-up"></i>
-                <h4>Email</h4>
-                <p>info@sbtechnosoft.com</p>
+                <h4>Почта</h4>
+                <p>{{contact.email}}</p>
               </div>
             </div>
           </div>
           <!-- /end contact-info -->
         </div>
         <div class="col-md-8 col-md-offset-2 col-sm-12">
-          <form method="post" class="contact-form">
-            {% csrf_token %}
-            <div class="row">
-                <div class="form-group col-md-6 col-sm-6">
-                    <input class="form-control" name="fullname" placeholder="Ф.И.О" required type="text">
-                </div>
-                <div class="form-group col-md-6 col-sm-6">
-                    <input class="form-control" name="email" placeholder="Email почта" required type="email">
-                </div>
-                <div class="form-group col-md-12 col-sm-12">
-                    <textarea name="message" placeholder="Ваше сообщение" class="form-control" rows="8" required></textarea>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                    <div class="action-submit text-center">
-                        <input class="btn btn-default btn-contact" value="Отправить" type="submit">
-                    </div>
-                </div>
-            </div>
-        </form>
+            <form action="{% url 'index' %}" method="post" class="contact-form">
+              {% csrf_token %}
+              <div class="row">
+                  <div class="form-group col-md-6 col-sm-6">
+                      <input class="form-control" name="name" placeholder="Ф.И.О" required type="text">
+                  </div>
+                  <div class="form-group col-md-6 col-sm-6">
+                      <input class="form-control" name="email" placeholder="Email почта" required type="email">
+                  </div>
+                  <div class="form-group col-md-12 col-sm-12">
+                      <input class="form-control" name="message" placeholder="Ваше сообщение" required type="text">
+                  </div>
+                  <div class="col-md-12 col-sm-12">
+                      <div class="action-submit text-center">
+                          <input class="btn btn-default btn-contact" value="Отправить" type="submit">
+                      </div>
+                  </div>
+              </div>
+          </form>
+          
           
           <!-- /end contact-form -->
         </div>
@@ -431,20 +433,21 @@
     <!-- Google Map Start -->
     <div class="google-map">
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d198710.35112897935!2d-98.51489117772236!3d38.904562823631146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited+States!5e0!3m2!1sen!2sin!4v1471865832140"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3064.2712286097973!2d72.80088531608291!3d40.519329304799165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z40.519329304799165!5e0!3m2!1sru!2sus!4v1690453836889"
         allowfullscreen></iframe>
     </div>
+    
     <!-- Google Map end -->
   </section>
   <!-- Contact Us End -->
   <!-- Copy Rights Start -->
   <footer>
     <div class="container">
-      <p>&copy; Copyright
+      <p>&copy;
         <script type="text/javascript">
           var d = new Date();
           document.write(d.getFullYear());
-        </script> Study | All Rights Reserved.
+        </script> {{settings.name}} | Все авторские права защищены.
       </p>
     </div>
   </footer>

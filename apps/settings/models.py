@@ -18,18 +18,7 @@ class Settings(models.Model):
     description = models.TextField(
         verbose_name='Описание сайта',
     )
-    photo1 = models.ImageField(
-        upload_to='photos/',
-        verbose_name='Фотография 1',
-    )
-    photo2 = models.ImageField(
-        upload_to='photos/',
-        verbose_name='Фотография 2',
-    )
-    photo3 = models.ImageField(
-        upload_to='photos/',
-        verbose_name='Фотография 3',
-    )
+ 
     
     def __str__(self):
         return self.title
@@ -89,25 +78,7 @@ class Our_team(models.Model):
         verbose_name_plural = 'Наша команда'
 
 
-class Smtp(models.Model):
-    name = models.CharField(
-        max_length=255,
-        verbose_name='Имя',
-    )
-    email = models.CharField(
-        max_length=255,
-        verbose_name='Email',
-    )
-    message = models.TextField(
-        verbose_name='Сообщение',
-    )
 
-    def __str__(self) -> str:
-        return self.name
-    
-    class Meta:
-        verbose_name = 'Заявка на SMTP'
-        verbose_name_plural = 'Заявки на SMTP'
 
 class About_us(models.Model):
     title = models.CharField(
@@ -186,3 +157,44 @@ class News(models.Model):
     class Meta:
         verbose_name = 'Новость'
         verbose_name_plural = 'Новости'
+
+class Contact(models.Model):
+    email = models.CharField(
+        max_length=255,
+        verbose_name='Почта',
+    )
+    address = models.CharField(
+        max_length=255,
+        verbose_name='Адрес',
+    )
+    phone = models.CharField(
+        max_length=20,
+        verbose_name='Телефон',
+    )
+
+    def __str__(self) -> str:
+        return self.email
+    
+    class Meta:
+        verbose_name = 'Контактная информация'
+
+class Information(models.Model):
+    lesson_count = models.IntegerField(
+        verbose_name='Количество  проведенных уроков',
+    )
+    student_count = models.IntegerField(
+        verbose_name='Количество студентов',
+    )
+    course = models.IntegerField(
+        verbose_name='Количество курсов',
+    )
+    awards = models.IntegerField(
+        verbose_name='Количество наград',
+    )
+
+    def __str__(self) -> str:
+        return 'Информация о нашем учебном центре'
+    
+    class Meta:
+        verbose_name = 'Информация о нашем учебном центре'
+        verbose_name_plural = 'Информация о нашем учебном центре'

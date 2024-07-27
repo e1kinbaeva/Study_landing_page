@@ -24,3 +24,4 @@ class Telegram(models.Model):
     class Meta:
         verbose_name = 'Заявка на Telegram'
         verbose_name_plural = 'Заявки на Telegram'
+
