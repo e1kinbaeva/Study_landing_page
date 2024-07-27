@@ -1,0 +1,476 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>{{settings.name}}</title>
+  <!-- Bootstrap CSS -->
+  <link href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <!-- Font Awesome CSS-->
+  <link href="{% static 'assets/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+  <!-- Linear icons CSS-->
+  <link href="{% static 'assets/linearicons/css/icon-font.min.css' %}" rel="stylesheet">
+  <!-- Animate CSS -->
+  <link href="{% static 'assets/animate/animate.css' %}" rel="stylesheet">
+  <!-- Portfolio CSS -->
+  <link href="{% static 'assets/css/ionicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/magnific-popup.css' %}" rel="stylesheet">
+  <!-- Owl Carousel -->
+  <link href="{% static 'assets/owl-carousel/css/owl.carousel.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/owl-carousel/css/owl.theme.css' %}" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js' %}"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js' %}"></script>
+    <![endif]-->
+</head>
+
+<body>
+  <!-- Pre Loader -->
+  <div id="loader"></div>
+  <!-- Header -->
+  <header id="home" class="welcome-hero-area">
+    <div class="header-top-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <!-- START LOGO -->
+            <div class="logo"> <a href="index.html"><img src="{{settings.logo.url}}" alt="Study"></a> </div>
+            <!-- END LOGO -->
+          </div>
+          <div class="col-md-9">
+            <!-- START MAIN MENU -->
+            <nav class="navbar navbar-default">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                  data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle
+                    navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+                    class="icon-bar"></span> </button>
+                <!-- Logo -->
+              </div>
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                  <li><a class="smoth-scroll" href="#home">Главная страница</a></li>
+                  <li><a class="smoth-scroll" href="#aboutus">О нас </a></li>
+                  <li><a class="smoth-scroll" href="#services">Услуги</a></li>
+                  <li><a class="smoth-scroll" href="#ourteam">Наша команда</a></li>
+                  <li><a class="smoth-scroll" href="#testimonial">Отзывы</a></li>
+                  <li><a class="smoth-scroll" href="#ourblog">Новости </a></li>
+                  <li><a class="smoth-scroll" href="#contactus">Связаться с нами </a></li>
+                  
+                </ul>
+              </div>
+              <!-- /.navbar-collapse -->
+            </nav>
+            <!-- END MAIN MENU -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Start Slider Area -->
+    <div class="home-slider-area">
+      <div id="welcome-slide-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#welcome-slide-carousel" data-slide-to="0" class="active"></li>
+          <li data-target="#welcome-slide-carousel" data-slide-to="1"></li>
+          <li data-target="#welcome-slide-carousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <!-- Start Single Slider Item -->
+          <div class="item active">
+            <div class="single-slide-item slide-1">
+              <div class="single-slide-item-table">
+                <div class="single-slide-item-table-cell">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <h2>{{settings.title}}</h2>
+                        <p>{{settings.description}}</p>
+                        <a class="slide-btn smoth-scroll" href="#contactus">Связаться</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Single Slider Item-->
+          <!-- Start Single Slider Item-->
+          <div class="item">
+            <div class="single-slide-item slide-2">
+              <div class="single-slide-item-table">
+                <div class="single-slide-item-table-cell">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <h2>{{settings.title}}</h2>
+                        <p>{{settings.description}}</p>
+                        <a class="slide-btn smoth-scroll" href="#contactus">Связаться</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Single Slider Item -->
+          <!-- Start Single Slider Item-->
+          <div class="item">
+            <div class="single-slide-item slide-3">
+              <div class="single-slide-item-table">
+                <div class="single-slide-item-table-cell">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <h2>{{settings.title}}</h2>
+                        <p>{{settings.description}}</p>
+                        <a class="slide-btn smoth-scroll" href="#contactus">Связаться</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Single Slider Item -->
+          <a class="left welcome-control" href="#welcome-slide-carousel" role="button" data-slide="prev"><i
+              class="fa fa-angle-left"></i></a> <a class="right welcome-control" href="#welcome-slide-carousel"
+            role="button" data-slide="next"><i class="fa fa-angle-right"></i></a>
+        </div>
+      </div>
+    </div>
+    <!-- End Slider Area -->
+  </header>
+  <!-- Callouts Start -->
+  <div class="callouts-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="callouts-inner">
+          {% for advantage in advantage%}
+          <div class="col-sm-4">
+            <div class="message-description">
+              <div class="row">
+                <div class="col-sm-9">
+                  <h2>{{advantage.title}}</h2>
+                  <p>{{advantage.description}}</p>
+                </div>
+                <div class="col-sm-3"> <i class="fa fa-graduation-cap" aria-hidden="true"></i> </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %} 
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- About Us Start -->
+  <section id="aboutus" class="aboutus">
+    <div class="container">
+      <div class="section-title">
+        <h2> О НАС</h2>
+        <p></span></p>
+        <span class="line"></span>
+      </div>
+      <div class="row">
+        <div class="about-box">
+          <div class="col-md-7 col-sm-12">
+            <h3>{{about_us.title}}</h3>
+            <p>{{about_us.description}}</p>
+            {%for about in about_advantage%}
+            <ul class="about-list">
+              <li><i class="fa fa-book"></i>{{about.title}}</li>
+              
+            </ul>
+            {% endfor%}
+            
+          </div>
+          <div class="col-md-5">
+            <div class="call-back">
+              <h3>Заставьте нас перезвонить вам</h3>
+              <form action="{% url 'index' %}" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input class="form-control" name="fullname" placeholder="Ф.И.О" type="text">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" name="course" placeholder="Интересующий ваш курс" type="text">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" name="phone" placeholder="Номер телефона" type="text">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" name="email" placeholder="E-mail почта" type="email">
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-default" value="Отправить" type="submit">
+                </div>
+            </form>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Services Start -->
+  <section id="services" class="services">
+    <div class="container">
+      <div class="row">
+        <div class="section-title">
+          <h2>НАШИ УСЛУГИ</h2>
+          <p></span></p>
+          <span class="line"></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="service-callouts">
+          {% for service in service%}
+          <div class="col-sm-4">
+            <div class="single-service-box"> <i class="lnr lnr-laptop-phone"></i>
+              <div class="clearfix"></div>
+              <h4>{{service.title}}</h4>
+              <p>{{service.description}}</p>
+            </div>
+          </div>
+          {% endfor %}
+          
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Services End -->
+  <!-- Our counters -->
+  <div class="counters">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="counter">
+            <div class="counter-icon-box"><i class="lnr lnr-clock"></i></div>
+            <div class="number animateNumber" data-num="5325"> <span>5325</span></div>
+            <p>Hours of Lessions</p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="counter">
+            <div class="counter-icon-box"><i class="lnr lnr-users"></i></div>
+            <div class="number animateNumber" data-num="160"> <span>160</span></div>
+            <p>Satisfied Students</p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="counter">
+            <div class="counter-icon-box"><i class="lnr lnr-laptop"></i></div>
+            <div class="number animateNumber" data-num="530"> <span>530</span></div>
+            <p>Courses</p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="counter">
+            <div class="counter-icon-box"><i class="lnr lnr-thumbs-up"></i></div>
+            <div class="number animateNumber" data-num="49"> <span>49</span></div>
+            <p>Awards Won</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Our counters End -->
+  <!-- Our Team Start -->
+  <section id="ourteam" class="ourteam">
+    <div class="container">
+      <div class="row">
+        <div class="section-title">
+          <h2> Наш факультет </h2>
+          <p>Дружная команда - лучше всего доводит дело до конца </span></p>
+          <span class="line"></span>
+        </div>
+        <div class="team-cnt">
+          {% for team in team%}
+          <div class="col-sm-6 col-md-3">
+            <div class="single_team">
+              <div class="team_img"><img src="{{team.photo.url}} " alt=""></div>
+              <h5>{{team.name}}</h5>
+              <span>{{team.position}}</span>
+              <div class="team_social_bar"> <a href="javascript:void(0)"><i class="fa fa-facebook"></i></a> <a
+                  href="javascript:void(0)"><i class="fa fa-google-plus"></i></a> <a href="javascript:void(0)"><i
+                    class="fa fa-twitter"></i></a> <a href="javascript:void(0)"><i class="fa fa-pinterest-p"></i></a>
+              </div>
+            </div>
+          </div>
+          {% endfor%}
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Our Team End -->
+  <!-- Testimonials Wrapper Start -->
+  <section id="testimonial" class="testimonials">
+    <div class="container">
+      <div class="section-title">
+        <h2>Отзывы наших учеников</h2>
+        <p></span></p>
+        <span class="line"></span>
+      </div>
+      <div id="testimonials" class="owl-carousel owl-theme">
+        {% for rev in review%}
+        <div class="item">
+          <div class="tes-wrapper"> <span><img src="{{rev.photo.url}}" alt="Smart App"></span>
+            <h3>{{rev.name}}<span>{{rev.work}}</span></h3>
+            <p>{{rev.review}}</p>
+          </div>
+        </div>
+        {% endfor%}
+        
+        
+      </div>
+    </div>
+  </section>
+  <!-- Testimonials Wrapper End -->
+  <section id="ourblog" class="ourblog">
+    <div class="container">
+      <div class="row">
+        <div class="section-title">
+  <!-- Our Blog -->
+  <section class="blog-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="section-title">
+          <h2>Наш <span>блог</span></h2>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Start Single Blog Post -->
+        {% for news in news%}
+        <div class="col-md-4 col-sm-6">
+          <div class="single-blog-post">
+            <div class="single-blog-thumb"> <img src="{{news.photo.url}}" alt="" class="img-responsive">
+            </div>
+            <div class="single-post-content">
+              <ul class="post-meta">
+                <li><a href="#"><i class="fa fa-calendar"></i>{{news.date}}</a> </li>
+              </ul>
+              <h4><a href="single-blog.html">{{news.title}}</a></h4>
+              <p>{{news.description}}</p>
+              <a class="blog-btn" >Читать</a>
+            </div>
+          </div>
+        </div>
+        {% endfor%}
+      </div>
+    </div>
+  </section>
+  <!-- Our Blog End -->
+  <!-- Contact Us Start -->
+  <section id="contactus" class="contactus">
+    <div class="container">
+      <div class="row">
+        <div class="section-title">
+          <h2>Связаться <span>с нами</span></h2>
+          <p></span></p>
+          <span class="line"></span>
+        </div>
+        <div class="col-md-8 col-md-offset-2 col-sm-12">
+          <div class="contact-info">
+            <div class="col-md-4 col-sm-4">
+              <div class="single-contact"> <i class="lnr lnr-smartphone"></i>
+                <h4>Phone</h4>
+                <p>000-111-333333</p>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+              <div class="single-contact"> <i class="lnr lnr-map-marker"></i>
+                <h4>Address</h4>
+                <p>255, Williams Lane USA</p>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+              <div class="single-contact"> <i class="lnr lnr-thumbs-up"></i>
+                <h4>Email</h4>
+                <p>info@sbtechnosoft.com</p>
+              </div>
+            </div>
+          </div>
+          <!-- /end contact-info -->
+        </div>
+        <div class="col-md-8 col-md-offset-2 col-sm-12">
+          <form method="post" class="contact-form">
+            {% csrf_token %}
+            <div class="row">
+                <div class="form-group col-md-6 col-sm-6">
+                    <input class="form-control" name="fullname" placeholder="Ф.И.О" required type="text">
+                </div>
+                <div class="form-group col-md-6 col-sm-6">
+                    <input class="form-control" name="email" placeholder="Email почта" required type="email">
+                </div>
+                <div class="form-group col-md-12 col-sm-12">
+                    <textarea name="message" placeholder="Ваше сообщение" class="form-control" rows="8" required></textarea>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                    <div class="action-submit text-center">
+                        <input class="btn btn-default btn-contact" value="Отправить" type="submit">
+                    </div>
+                </div>
+            </div>
+        </form>
+          
+          <!-- /end contact-form -->
+        </div>
+      </div>
+    </div>
+    <!-- Google Map Start -->
+    <div class="google-map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d198710.35112897935!2d-98.51489117772236!3d38.904562823631146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited+States!5e0!3m2!1sen!2sin!4v1471865832140"
+        allowfullscreen></iframe>
+    </div>
+    <!-- Google Map end -->
+  </section>
+  <!-- Contact Us End -->
+  <!-- Copy Rights Start -->
+  <footer>
+    <div class="container">
+      <p>&copy; Copyright
+        <script type="text/javascript">
+          var d = new Date();
+          document.write(d.getFullYear());
+        </script> Study | All Rights Reserved.
+      </p>
+    </div>
+  </footer>
+  <!-- Copy Rights End -->
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="{% static 'assets/jquery/jquery-3.1.1.min.js' %}"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'assets/easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'assets/isotope/jquery.isotope.js' %}"></script>
+  <script src="{% static 'assets/jquery/imagesloaded.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/jquery/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'assets/number-animation/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'assets/jquery/plugins.js' %}"></script>
+  <script src="{% static 'assets/owl-carousel/js/owl.carousel.js' %}"></script>
+  <script src="{% static 'assets/wow/wow.min.js' %}"></script>
+  <script src="{% static 'js/custom.js' %}"></script>
+  <!-- Global Site Tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-83282272-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments) };
+    gtag('js', new Date());
+
+    gtag('config', 'UA-83282272-3');
+  </script>
+</body>
+
+</html>
