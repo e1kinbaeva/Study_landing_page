@@ -198,3 +198,23 @@ class Information(models.Model):
     class Meta:
         verbose_name = 'Информация о нашем учебном центре'
         verbose_name_plural = 'Информация о нашем учебном центре'
+
+class Smtp(models.Model):
+    name = models.CharField(
+        max_length=155,
+        verbose_name='Заголовка'
+    )
+    email = models.CharField(
+        max_length=155,
+        verbose_name='Почта'
+    )
+    message = models.TextField(
+        verbose_name='Сообщение'
+    )
+
+    def __str__(self) -> str:
+        return self.name
+    
+    class Meta:
+        verbose_name = 'Заявка на Telegram2'
+        verbose_name_plural = 'Заявки на Telegram2'

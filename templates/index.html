@@ -405,24 +405,25 @@
           <!-- /end contact-info -->
         </div>
         <div class="col-md-8 col-md-offset-2 col-sm-12">
-            <form action="{% url 'index' %}" method="post" class="contact-form">
-              {% csrf_token %}
-              <div class="row">
-                  <div class="form-group col-md-6 col-sm-6">
-                      <input class="form-control" name="name" placeholder="Ф.И.О" required type="text">
-                  </div>
-                  <div class="form-group col-md-6 col-sm-6">
-                      <input class="form-control" name="email" placeholder="Email почта" required type="email">
-                  </div>
-                  <div class="form-group col-md-12 col-sm-12">
-                      <input class="form-control" name="message" placeholder="Ваше сообщение" required type="text">
-                  </div>
-                  <div class="col-md-12 col-sm-12">
-                      <div class="action-submit text-center">
-                          <input class="btn btn-default btn-contact" value="Отправить" type="submit">
-                      </div>
-                  </div>
+          <form action="{% url 'index' %}" method="post" class="contact-form">
+            {% csrf_token %}
+            <input type="hidden" name="form_type" value="contact_form">
+            <div class="row">
+              <div class="form-group col-md-6 col-sm-6">
+                <input class="form-control" name="fullname" placeholder="Ф.И.О" required type="text">
               </div>
+              <div class="form-group col-md-6 col-sm-6">
+                <input class="form-control" name="email_smtp" placeholder="Email почта" required type="email">
+              </div>
+              <div class="form-group col-md-12 col-sm-12">
+                <input class="form-control" name="message" placeholder="Ваше сообщение" required type="text">
+              </div>
+              <div class="col-md-12 col-sm-12">
+                <div class="action-submit text-center">
+                  <input class="btn btn-default btn-contact" value="Отправить" type="submit">
+                </div>
+              </div>
+            </div>
           </form>
           
           

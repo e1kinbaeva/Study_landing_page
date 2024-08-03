@@ -1,9 +1,9 @@
+from django.core.mail import send_mail
 from django.http import HttpRequest
 from django.shortcuts import render, redirect
-
 from apps.contact.models import Telegram
 from apps.contact.views import get_text
-from .models import *
+from .models import Settings, Advantage, Service, Our_team, About_us, About_advantage, Review, News, Contact, Information, Smtp
 
 def index(request: HttpRequest):
     settings = Settings.objects.latest('id')
@@ -18,29 +18,26 @@ def index(request: HttpRequest):
     info = Information.objects.latest('id')
 
     if request.method == "POST":
-        fullname = request.POST.get("fullname")
-        email = request.POST.get("email")
-        message = request.POST.get('message')
-        Telegram.objects.create(fullname=fullname, email=email, message=message )
-        get_text(f"""Оставлена заявка 💬:
-                 
-ФИО: {fullname}
+        form_type = request.POST.get("form_type")
+        if form_type == "contact_form":
+            name = request.POST.get("fullname")
+            email = request.POST.get("email_smtp")
+            message = request.POST.get('message')
+            Smtp.objects.create(name=name, email=email, message=message)
+            send_mail(
+                subject=f'New Contact Form Submission from {name} email - {email}',
+                message=message,
+                from_email=email,
+                recipient_list=['ainazikerkinbaeva2106200414@gmail.com'],
+            )
+        elif form_type == "callback_form":
+            fullname = request.POST.get("fullname")
+            course = request.POST.get("course")
+            phone = request.POST.get('phone')
+            email = request.POST.get("email")
+            Telegram.objects.create(fullname=fullname, course=course, phone=phone, email=email)
+            get_text(f"""Оставлена заявка 💬:
 
-Почта: {email}
-
-Сообщение: {message}
-
-""")
-        return redirect('index')
-    
-    if request.method == "POST":
-        fullname = request.POST.get("fullname")
-        course = request.POST.get("course")
-        phone = request.POST.get('phone')
-        email = request.POST.get("email")
-        Telegram.objects.create(fullname=fullname, course=course, phone=phone, email=email)
-        get_text(f"""Оставлена заявка 💬:
-                 
 ФИО: {fullname}
 
 Название курса: {course}
@@ -48,6 +45,8 @@ def index(request: HttpRequest):
 Номер телефона: {phone}
 
 Почта: {email}
-""")
+
+""")  # Send message via Telegram
         return redirect('index')
+
     return render(request, 'index.html', locals())
